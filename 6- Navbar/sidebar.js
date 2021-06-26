@@ -1,0 +1,35 @@
+import React from 'react'
+import { links, social } from './data'
+
+function sidebar(props) {
+    return (
+        <>
+            <h4>Sidebar</h4>
+            <div className="links-container show-container">
+                <ul className="links">
+                {links.map((link)=>{
+                    const {id,url,text} = link;
+                    return(
+                    <li key={id}>
+                        <a href={url}>{text}</a>
+                    </li>
+                    )
+                })}
+                </ul>
+            </div>
+            <ul className="social-icons">
+          {social.map((socialIcon)=>{
+            const {id,url,icon} = socialIcon
+            return (
+              <li key={id}>
+                <a href={url}>{icon}</a>
+              </li>
+            )
+          })}
+        </ul>
+        </>
+
+    );
+}
+
+export default sidebar;
